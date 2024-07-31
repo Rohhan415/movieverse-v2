@@ -1,6 +1,6 @@
 "use server";
 
-import { MoviesData } from "../_types/types";
+import {MoviesData} from "../_types/types";
 
 // Function to fetch popular movies from The Movie Database (TMDb) API
 export async function getPopularMovies(): Promise<MoviesData> {
@@ -14,7 +14,7 @@ export async function getPopularMovies(): Promise<MoviesData> {
   }
 
   // Construct the URL for the API request
-  const url = new URL("https://api.themoviedb.org/3/movie/now_playing");
+  const url = new URL("https://api.themoviedb.org/3/movie/popular");
   url.searchParams.append("api_key", apiKey);
 
   try {
@@ -29,12 +29,38 @@ export async function getPopularMovies(): Promise<MoviesData> {
     }
 
     // Parse the JSON response
-    const data: MoviesData = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     // Log any errors that occur during the fetch operation
     console.error("Failed to fetch popular movies:", error);
     // Rethrow the error to be handled by the caller
     throw error;
   }
+}
+
+export async function getNowPlayingMovies(){
+    const apiKey = process.env.TMDB_API_KEY;
+    if (!apiKey) {
+        throw new Error(
+        "API key is missing. Please set TMDB_API_KEY in your environment variables."
+        );
+    }
+
+    const url = new URL("https://api.themoviedb.org/3/movie/upcoming");
+    url.searchParams.append("api_key", apiKey);
+
+    try {
+        const response = await fetch(url.toString());
+        if (!response.ok) {
+        const errorDetails = await response.text();
+          console.error(`Network response was not ok: ${response.statusText}. Details: ${errorDetails}`);
+          return
+        }
+        console.log(response, 'sss')
+
+      return await response.json();
+    } catch (error) {
+        console.error("Failed to fetch now playing movies:", error);
+        throw error;
+    }
 }

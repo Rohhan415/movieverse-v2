@@ -1,7 +1,8 @@
 import LoadingBar from "react-top-loading-bar";
+import Spinner from "@/app/_components/Spinner";
 
 function loading() {
-  return <LoadingBar color="#ff5900" />;
+  return <Spinner />;
 }
 
 export default loading;

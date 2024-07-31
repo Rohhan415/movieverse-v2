@@ -1,24 +1,10 @@
-import MainBanner from "./_components/entrySection/MainBnner";
-import { getPopularMovies } from "./_lib/actions";
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
-import LoadingBar from "react-top-loading-bar";
+import MainContent from "./_components/MainPage";
 
 export default async function Home() {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery({
-    queryKey: ["popularMovies"],
-    queryFn: getPopularMovies,
-  });
 
-  return (
-    <div>
-      <HydrationBoundary state={dehydrate(queryClient)}>
-        <MainBanner />
-      </HydrationBoundary>
-    </div>
-  );
+    return (
+        <div className='bg-base-black '>
+            <MainContent/>
+        </div>
+    );
 }
