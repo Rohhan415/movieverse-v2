@@ -41,8 +41,10 @@ function MainSlider({data}: { data: any }) {
     return (
         <div className="-mt-16 z-10 w-full">
             <HeroSlider
-                animations={{slidingAnimation: "fade"}}
-                // autoplay={{ autoplayDuration: 20000 }}
+                controller={{slidingDelay: 100}}
+                animations={{slidingAnimation: "fade", sliderFadeInDuration: 0}}
+                autoplay={{autoplayDuration: 15000}}
+
                 accessibility={{
                     shouldDisplayButtons: false,
                 }}
