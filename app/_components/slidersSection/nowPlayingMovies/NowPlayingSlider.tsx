@@ -9,7 +9,7 @@ async function NowPlayingSlider() {
   const data = await getNowPlayingMovies();
 
   return (
-    <section className="max-w-[120rem] mx-auto bg-base-black	">
+    <section className="max-w-[120rem] mb-24 mx-auto bg-base-black	">
       <h6 className="my-6 pl-32  tracking-widest text-base">
         <span className="text-shade-300">
           Now Playing in Theaters&nbsp; | &nbsp;{" "}

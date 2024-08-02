@@ -8,8 +8,6 @@ import SliderList from "@/app/_components/slidersSection/SliderList";
 async function NowPlayingSlider() {
   const data = await getPopularSeries();
 
-  console.log(data, "ddsss");
-
   return (
     <section className="max-w-[120rem] mx-auto bg-base-black">
       <h6 className="my-6 pl-32  tracking-widest text-base">

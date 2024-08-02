@@ -1,35 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+// features/tooltipSlice.ts
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface CounterState {
-  value: number;
+interface TooltipState {
+  hoveredIcon: string | null;
 }
 
-const initialState: CounterState = {
-  value: 0,
+const initialState: TooltipState = {
+  hoveredIcon: null,
 };
 
-export const counterSlice = createSlice({
-  name: "counter",
+const tooltipSlice = createSlice({
+  name: "tooltip",
   initialState,
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+    setHoveredIcon: (state, action: PayloadAction<string | null>) => {
+      state.hoveredIcon = action.payload;
     },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
-
-export default counterSlice.reducer;
+export const { setHoveredIcon } = tooltipSlice.actions;
+export default tooltipSlice.reducer;

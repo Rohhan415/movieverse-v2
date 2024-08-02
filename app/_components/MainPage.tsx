@@ -8,7 +8,7 @@ function MainContent() {
   return (
     <Suspense fallback={<Spinner />}>
       <MainBanner />
-      <div className="grid overflow-hidden gap-20">
+      <div className=" overflow-hidden ">
         <NowPlayingSlider />
         <PopularSeries />
       </div>
