@@ -1,10 +1,13 @@
-"use client"
+"use client";
 
-import {TailSpin} from "react-loader-spinner";
-
+import { TailSpin } from "react-loader-spinner";
 
 function Spinner() {
-    return <div className="flex justify-center items-center h-screen"><TailSpin color="#ff5900"/></div>
+  return (
+    <div className="flex justify-center h-full  items-center">
+      <TailSpin color="#ff5900" />
+    </div>
+  );
 }
 
 export default Spinner;

@@ -7,9 +7,5 @@ import MainSlider from "@/app/_components/MainSlider";
 export default async function MainBanner() {
   const data = await getPopularMovies();
 
-  return (
-    <div className="w-full">
-      <MainSlider data={data} />
-    </div>
-  );
+  return <MainSlider data={data} />;
 }

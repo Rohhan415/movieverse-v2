@@ -5,7 +5,7 @@ import { getPopularSeries } from "@/app/_lib/actions";
 import Link from "next/link";
 import SliderList from "@/app/_components/slidersSection/SliderList";
 
-async function NowPlayingSlider() {
+async function popularSeries() {
   const data = await getPopularSeries();
 
   return (
@@ -23,4 +23,4 @@ async function NowPlayingSlider() {
   );
 }
 
-export default NowPlayingSlider;
+export default popularSeries;

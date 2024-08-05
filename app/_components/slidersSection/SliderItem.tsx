@@ -70,7 +70,7 @@ const SliderItem: React.FC<SliderItemProps> = ({ item }) => {
               >
                 <BookmarkIcon className="w-full h-full" />
                 <Tooltip
-                  message="Add to Bookmarks"
+                  message="Add to Watchlist"
                   visible={hoveredIcon === "bookmark"}
                 />
               </Link>

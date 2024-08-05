@@ -1,19 +1,25 @@
-// Tooltip.tsx
 import React from "react";
+import classNames from "classnames";
 
 interface TooltipProps {
   message: string;
   visible: boolean;
 }
 
-const Tooltip: React.FC<TooltipProps> = ({ message, visible }) => (
-  <div
-    className={`absolute bottom-10 right-0 bg-gray-800 text-white text-xs rounded px-2 py-1 shadow-md transition-opacity duration-300 ${
-      visible ? "opacity-100" : "opacity-0"
-    }`}
-  >
-    {message}
-  </div>
-);
+const Tooltip: React.FC<TooltipProps> = ({ message, visible }) => {
+  return (
+    <div
+      className={classNames(
+        "fixed transform -translate-x-1/2 -translate-y-16 bg-base-gray text-base-white text-sm p-2 shadow-lg  pointer-events-none",
+        {
+          "opacity-0": !visible,
+          "opacity-100": visible,
+        },
+      )}
+    >
+      {message}
+    </div>
+  );
+};
 
 export default Tooltip;
