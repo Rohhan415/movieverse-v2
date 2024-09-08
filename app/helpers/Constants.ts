@@ -1,0 +1,1 @@
+export const ADVERTISEMENT_BANNER = 3;

@@ -11,7 +11,7 @@ function LoginNavigation() {
       <ul className="flex items-center gap-8  justify-end">
         <li>
           <Link
-            href="/account"
+            href="/search"
             className="transition-colors hover:text-accent-400 inline-flex gap-2 items-center"
           >
             <MagnifyingGlassIcon className="h-6 w-6" />
@@ -19,7 +19,7 @@ function LoginNavigation() {
         </li>
         <li>
           <Link
-            href="/account"
+            href="/bookmarks"
             className="transition-colors hover:text-accent-400 inline-flex gap-2 items-center"
           >
             <BookmarkIcon className="h-6 w-6" />

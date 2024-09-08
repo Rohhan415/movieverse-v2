@@ -6,7 +6,7 @@ export default async function Navigation() {
       <ul className="flex items-center gap-8 justify-start ">
         <li>
           <Link
-            href="/about"
+            href="/movies"
             className="transition-colors flex gap-1 items-center hover:text-accent-400"
           >
             Movies
@@ -14,7 +14,7 @@ export default async function Navigation() {
         </li>
         <li>
           <Link
-            href="/account"
+            href="/series"
             className="transition-colors hover:text-accent-400"
           >
             Series
@@ -22,7 +22,7 @@ export default async function Navigation() {
         </li>
         <li>
           <Link
-            href="/account"
+            href="/people"
             className="transition-colors hover:text-accent-400"
           >
             People

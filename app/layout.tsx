@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "./_store/StoreProvider";
 import Header from "./_components/navigation/Header";
+import Footer from "@/app/_components/footer/Footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
             <main className="flex justify-center items-center flex-grow bg-base-black">
               {children}
             </main>
+            <Footer />
           </div>
         </body>
       </html>

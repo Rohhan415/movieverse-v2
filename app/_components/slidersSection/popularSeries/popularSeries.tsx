@@ -1,7 +1,7 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { getPopularSeries } from "@/app/_lib/actions";
+import { getPopularSeries } from "@/app/_lib/mediaActions";
 import Link from "next/link";
 import SliderList from "@/app/_components/slidersSection/SliderList";
 
@@ -9,7 +9,7 @@ async function popularSeries() {
   const data = await getPopularSeries();
 
   return (
-    <section className="max-w-[120rem] mx-auto bg-base-black">
+    <section className="max-w-full mx-auto bg-base-black">
       <h6 className="my-6 pl-32  tracking-widest text-base">
         <span className="text-shade-300">Popular Series&nbsp; | &nbsp; </span>
         <Link className=" text-accent-600" href="/search">

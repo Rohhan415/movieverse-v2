@@ -4,13 +4,13 @@ import React from "react";
 import Slider from "react-slick";
 import { StarIcon } from "@heroicons/react/16/solid";
 import SliderItem from "./SliderItem";
-import { DataType, ProcessedDataItem } from "@/app/_types/types";
+import { ProcessedDataItem } from "@/app/_types/types";
 import { clipOverview } from "@/app/_utils/textUtils";
 import { settings } from "@/app/_components/slidersSection/controller";
 
-export default function SliderList({ data }: { data: DataType }) {
+export default function SliderList({ data }: { data: any }) {
   // Process data to add additional fields for rendering
-  const processedData: ProcessedDataItem[] = data?.results.map((item) => {
+  const processedData: ProcessedDataItem[] = data?.results.map((item: any) => {
     const isSeries = "original_name" in item;
 
     return {

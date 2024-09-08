@@ -1,6 +1,6 @@
 import "hero-slider/dist/index.css";
 
-import { getPopularMovies } from "@/app/_lib/actions";
+import { getPopularMovies } from "@/app/_lib/mediaActions";
 import MainSlider from "@/app/_components/MainSlider";
 
 // Component definition

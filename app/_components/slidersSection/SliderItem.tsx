@@ -1,4 +1,3 @@
-// SliderItem.tsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,8 +26,8 @@ const SliderItem: React.FC<SliderItemProps> = ({ item }) => {
   );
 
   return (
-    <li className="w-full !flex flex-col p-6 justify-center">
-      <div className="group relative w-64 h-96 overflow-hidden flex flex-col items-center">
+    <li className="w-full flex flex-col p-6 justify-center">
+      <div className="group relative w-[14vw] h-[45vh] overflow-hidden flex flex-col items-center">
         <div className="relative w-full h-full bg-shade-300 group-hover:bg-shade-300 transition-all duration-300">
           <Image
             fill

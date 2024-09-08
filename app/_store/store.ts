@@ -1,11 +1,15 @@
 // store.ts
 import { configureStore } from "@reduxjs/toolkit";
 
-import tooltipReducer from "./slice"; // Import the tooltip reducer
+import tooltipReducer from "./slice";
+import movieSearchReducer from "./movieSearchSlice";
+import languageFilterReducer from "./languagesFilterSlice";
 
 export const store = configureStore({
   reducer: {
-    tooltip: tooltipReducer, // Add the tooltip reducer to the store
+    tooltip: tooltipReducer,
+    movieSearch: movieSearchReducer,
+    languageFilter: languageFilterReducer,
   },
 });
 

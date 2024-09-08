@@ -3,13 +3,13 @@ import Image from "next/image";
 
 function Logo() {
   return (
-    <Link href="/" className="z-10 flex items-center px-8">
+    <Link href="/" className="z-10  flex items-center px-8">
       <Image
-        loading="eager"
         src="/logo.png"
-        height="160"
-        width="160"
-        alt="The Wild Oasis logo"
+        height="20"
+        width="180"
+        alt="The MovieVerse logo"
+        className=" "
       />
     </Link>
   );

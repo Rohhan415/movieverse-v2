@@ -1,9 +1,11 @@
 "use server";
 
-import { MoviesData, SeriesData, TMDbResponse } from "../_types/types";
+import { TMDbResponse } from "../_types/types"; // Helper function to fetch data from TMDb API
 
 // Helper function to fetch data from TMDb API
-async function fetchFromTMDb<T>(endpoint: string): Promise<TMDbResponse<T>> {
+export async function fetchFromTMDb<T>(
+  endpoint: string,
+): Promise<TMDbResponse<T>> {
   const apiKey = process.env.TMDB_API_KEY;
   if (!apiKey) {
     throw new Error(
@@ -28,19 +30,4 @@ async function fetchFromTMDb<T>(endpoint: string): Promise<TMDbResponse<T>> {
     console.error(`Failed to fetch data from TMDb:`, error);
     throw error;
   }
-}
-
-// Function to fetch popular movies
-export async function getPopularMovies(): Promise<TMDbResponse<MoviesData>> {
-  return fetchFromTMDb<MoviesData>("movie/popular");
-}
-
-// Function to fetch now playing movies
-export async function getNowPlayingMovies(): Promise<TMDbResponse<MoviesData>> {
-  return fetchFromTMDb<MoviesData>("movie/upcoming");
-}
-
-// Function to fetch popular series
-export async function getPopularSeries(): Promise<TMDbResponse<SeriesData>> {
-  return fetchFromTMDb<SeriesData>("tv/popular");
 }
