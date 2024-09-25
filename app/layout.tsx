@@ -26,7 +26,7 @@ export default function RootLayout({
         <body className={`${montserrat.className} bg-base-black  `}>
           <div className="flex flex-col min-h-screen mx-auto  ">
             <Header />
-            <main className="flex justify-center items-center flex-grow bg-base-black">
+            <main className="flex justify-center items-center h-full flex-grow bg-base-black">
               {children}
             </main>
             <Footer />

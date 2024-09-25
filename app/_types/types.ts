@@ -165,4 +165,9 @@ export interface Actor {
 export interface MovieSearchItemProps {
   genresResult: { genres: { id: number; name: string }[] };
   languages: { iso_639_1: string; english_name: string }[];
+  countries: {
+    iso_3166_1: string;
+    english_name: string;
+    native_name: string;
+  }[];
 }

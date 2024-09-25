@@ -47,8 +47,6 @@ export async function getDiscoverMovies(params?: DiscoverMoviesParams) {
   // Convert params object to URLSearchParams format
   const searchParams = new URLSearchParams();
 
-  console.log(params, "params"); // Log params
-
   if (params) {
     Object.entries(params).forEach(([key, value]) => {
       if (value !== undefined) {
@@ -59,8 +57,6 @@ export async function getDiscoverMovies(params?: DiscoverMoviesParams) {
       }
     });
   }
-
-  console.log(searchParams.toString(), "searchParams"); // Log final search params
 
   // Call the fetch function using the constructed query string
   const endpoint = `discover/movie?${searchParams.toString()}`;
@@ -74,6 +70,14 @@ export async function getMovieGenres() {
   return fetchFromTMDb<any>("genre/movie/list");
 }
 
-export async function getMovieLanguages() {
+export async function getConfigurationLanguages() {
   return fetchFromTMDb<any>("configuration/languages");
+}
+
+export async function getConfigurationCountries() {
+  return fetchFromTMDb<any>("configuration/countries");
+}
+
+export async function getConfigurationDetails() {
+  return fetchFromTMDb<any>("configuration");
 }
